@@ -1,0 +1,14 @@
+{
+  "articles": [
+    {
+      "title": "SOC Topology",
+      "summary": "An overview of Security Operations Center (SOC) topology, including its components and architecture.",
+      "path": "templates/articles/soc-topology.html"
+    },
+    {
+      "title": "Incident Response",
+      "summary": "A detailed guide on incident response strategies and best practices for organizations.",
+      "path": "templates/articles/incident-response.html"
+    }
+  ]
+}
