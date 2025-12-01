@@ -314,6 +314,193 @@ footer {
     to   { opacity: 1; transform: translateY(0); }
 }
 
+/* --- Struktur Organisasi Styles --- */
+
+.layer-title {
+    color: var(--warning);
+    font-size: 1.2rem;
+    letter-spacing: 4px;
+    margin: 3rem 0 1.5rem;
+    border-bottom: 1px solid rgba(255, 179, 71, 0.3);
+    padding-bottom: 0.5rem;
+    text-shadow: 0 0 8px rgba(255, 179, 71, 0.2);
+}
+
+.command-grid {
+    justify-content: center; /* Agar ketua & sekretaris di tengah */
+}
+
+.mission-brief {
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 2px solid var(--primary);
+    padding: 0.8rem;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+
+.mission-brief span {
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    margin-bottom: 4px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.mission-brief p {
+    margin: 0;
+    color: #ccc;
+    line-height: 1.4;
+}
+
+/* Warna khusus untuk Admin/Sekretaris */
+.admin-unit .rank {
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.admin-unit {
+    border: 1px solid rgba(17, 255, 136, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(7, 18, 15, 0.9);
+    position: relative;
+}
+
+.admin-unit::before {
+    content: "Admin";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.secretary-unit .rank {
+    color: var(--accent);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.secretary-unit {
+    border: 1px solid rgba(10, 255, 210, 0.3);
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(3, 9, 12, 0.9);
+    position: relative;
+}
+
+.secretary-unit::before {
+    content: "Sekretaris";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: #04110a;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Struktur Organisasi - Anggota */
+.members-grid {
+    display: grid;
+    /* Ubah minmax dari 280px menjadi 220px agar kartu lebih kecil/rampung */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding-bottom: 4rem;
+}
+
+.member-card {
+    background: rgba(5, 12, 16, 0.8);
+    border: 1px solid rgba(17, 255, 136, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 255, 170, 0.2);
+}
+
+.member-photo {
+    /* Ubah height dari 250px menjadi 180px */
+    height: 180px;
+    width: 100%;
+    position: relative;
+    background: #000;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Tambahkan object-position top agar wajah tidak terpotong */
+    object-position: top;
+    filter: grayscale(80%) contrast(1.2);
+    transition: filter 0.3s;
+}
+
+.member-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.member-info h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.member-info p {
+    font-size: 0.9rem;
+    color: #ccc;
+    margin: 0.2rem 0;
+}
+
+.member-info .rank {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+}
+
+/* --- Special High-Value Targets (Command Only) --- */
+
+/* Hapus .response-grid .member-card dari sini */
+.command-grid .member-card {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6), 
+                0 0 15px rgba(255, 179, 71, 0.2);
+    border-color: var(--warning);
+    z-index: 10;
+}
+
+/* Hapus .response-grid .member-photo dari sini */
+.command-grid .member-photo {
+    height: 240px; /* Hanya Command Layer yang fotonya besar */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.command-grid .member-card:hover {
+    transform: translateY(-20px) scale(1.02);
+}
+
+/* Responsive Adjustments */
 @media (max-width: 900px) {
     .articles-layout {
         grid-template-columns: 1fr;
