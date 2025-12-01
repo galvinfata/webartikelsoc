@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DopperCSIRT | Artikel Strategis</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="articles-page">
+    <nav class="navbar">
+        <img src="assets/img/Gemini_Generated_Image_tqk4w2tqk4w2tqk4-removebg-preview.png" alt="DopperCSIRT Logo">
+        <ul class="nav-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#articles">Advisory</a></li>
+            <li><a href="index.html#services">Layanan</a></li>
+            <li><a href="index.html#contact">Lapor Insiden</a></li
+            <li><a href="articles.html" class="active">Artikel Teknis</a></li>
+        </ul>
+    </nav>
+
+    <main class="articles-layout">
+        <aside class="article-menu">
+            <button data-article="soc-topology" class="active">Topologi SOC</button>
+            <button data-article="soc-room">Ruangan SOC Dopper</button>
+            <button data-article="incident-response">Incident Response Lifecycle</button>
+            <button data-article="threat-intel">Threat Intelligence Pipeline</button>
+        </aside>
+
+        <section class="article-panel">
+            <article id="soc-topology" class="article-content active">
+                <p class="article-category">Infrastructure / Architecture</p>
+                <h1>Arsitektur Pertahanan Berlapis (Defense-in-Depth) DopperCSIRT</h1>
+                <p>Keamanan siber yang tangguh dimulai dari arsitektur jaringan yang kuat. DopperCSIRT menerapkan konsep network segmentation ketat untuk meminimalkan blast radius serangan dan menjaga integritas data investigasi.</p>
+                <figure class="article-figure">
+                    <img src="assets/img/photo_2025-12-01_11-51-48.jpg" alt="Diagram Topologi SOC DopperCSIRT">
+                    <figcaption>Diagram logis tiga zona pertahanan DopperCSIRT.</figcaption>
+                </figure>
+                <h2>DMZ – Zona Merah</h2>
+                <p>Berisi web server publik yang diproteksi Suricata IDS dan kolektor log Wazuh SIEM untuk deteksi intrusi real-time. Serangan ditahan di zona ini agar tidak menjalar.</p>
+                <h2>SOC Zone – Zona Biru</h2>
+                <ul>
+                    <li><strong>TheHive &amp; Cortex:</strong> Manajemen kasus dan analisis forensik.</li>
+                    <li><strong>MISP:</strong> Repository threat intelligence terintegrasi.</li>
+                    <li><strong>Shuffle (SOAR):</strong> Mengotomasi playbook respons insiden.</li>
+                </ul>
+                <h2>LAN Internal – Zona Hijau</h2>
+                <p>Area eksklusif administrator jaringan dengan akses terpisah penuh dari SOC dan DMZ sehingga kontrol tetap aman meski zona lain dalam mitigasi.</p>
+                <p>Dengan segmentasi tiga lapis ini, data intelijen tetap steril dan layanan publik terlindungi.</p>
+            </article>
+
+            <article id="soc-room" class="article-content">
+                <p class="article-category">Facilities / Inside Dopper</p>
+                <h1>Mengintip Fasilitas Command Center DopperCSIRT</h1>
+                <p>Kecepatan respons menuntut SOC fisik yang siap 24/7. Command Center kami dirancang untuk efisiensi tinggi dan kolaborasi terkendali.</p>
+                <figure class="article-figure">
+                    <img src="assets/img/socroom.png" alt="Interior Ruang SOC DopperCSIRT">
+                    <figcaption>Video wall dengan live threat map, metrik server, dan antrean tiket TheHive.</figcaption>
+                </figure>
+                <h2>Centralized Video Wall</h2>
+                <p>Menampilkan live threat map, kesehatan server, serta tiket TheHive (contoh: “15 NEW, 3 CRITICAL”) sehingga seluruh analis berbagi situational awareness yang sama.</p>
+                <h2>Ergonomic Analyst Workstations</h2>
+                <p>Konfigurasi multi-monitor memungkinkan Tier 1/2 membuka log collector, feed intel, dan kanal komunikasi secara paralel untuk menurunkan MTTD.</p>
+                <h2>Secure &amp; Collaborative Environment</h2>
+                <p>Layout open-plan terfokus memudahkan koordinasi saat major incident, namun tetap menjaga ketenangan untuk deep dive analysis.</p>
+                <p>Fasilitas ini menjadi benteng pertahanan digital tempat kami menjaga aset organisasi Anda sepanjang waktu.</p>
+            </article>
+
+            <article id="incident-response" class="article-content">
+                <h1>Incident Response Lifecycle</h1>
+                <ol>
+                    <li>Preparation – tabletop exercise triwulanan</li>
+                    <li>Identification – MITRE-based detection rules</li>
+                    <li>Containment – segmentasi VLAN darurat</li>
+                    <li>Eradication – rebuild melalui golden image</li>
+                    <li>Recovery – controlled rollout dengan canary</li>
+                    <li>Lessons Learned – RCA + KPI MTTR</li>
+                </ol>
+            </article>
+
+            <article id="threat-intel" class="article-content">
+                <h1>Threat Intelligence Pipeline</h1>
+                <p>Pipeline mengkonsolidasikan sumber OSINT, ISAC, dan internal telemetry.</p>
+                <h2>Stages</h2>
+                <ul>
+                    <li>Collection: MISP, VirusTotal, internal honeypot</li>
+                    <li>Enrichment: Risk scoring, WHOIS, sandbox detonation</li>
+                    <li>Dissemination: STIX/TAXII feed ke SIEM & EDR</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <script src="assets/js/articles.js"></script>
+</body>
+</html>
