@@ -454,6 +454,24 @@ footer {
     transition: filter 0.3s;
 }
 
+.member-photoir {
+    /* Ubah height dari 250px menjadi 180px */
+    height: 180px;
+    width: 100%;
+    position: relative;
+    background: #000;
+}
+
+.member-photoir img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*Tambahkanobject-positiontopagarwajahtidakterpotong*/object-position: middle;
+    filter: grayscale(80%) contrast(1.2);
+    transition: filter 0.3s;
+    -webkit-filter: grayscale(80%) contrast(1.2);
+}
+
 .member-info {
     padding: 1rem;
     text-align: center;
