@@ -41,6 +41,17 @@ soc-topology-site
 3. Open `src/templates/index.html` in a web browser to view the homepage.
 4. Use a local server for best results, as some features may require it (e.g., dynamic loading of articles).
 
+## Deploying to GitHub Pages
+
+This repository is configured to automatically deploy to GitHub Pages. To enable deployment:
+
+1. Go to your repository **Settings** > **Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Push changes to the `main` branch, and the site will be automatically deployed.
+4. Your site will be available at `https://<username>.github.io/<repository-name>/`.
+
+You can also manually trigger a deployment from the **Actions** tab by selecting the "Deploy static content to Pages" workflow and clicking "Run workflow".
+
 ## How to Contribute
 - Fork the repository and create a new branch for your feature or bug fix.
 - Make your changes and ensure that they are well-documented.
